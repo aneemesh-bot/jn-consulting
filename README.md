@@ -69,19 +69,11 @@ d) Web/native GUI for ease of use.
 - Much easier deployment.
 - Website format
 
-### 2. Labour costs
-
-![Untitled](BRSR%20Data%20Scraper%20and%20Aggregator%20c925909cb68f4d4a9b89700db358628b/Untitled.png)
-
-Negotiated at **$700** (~INR 60,000) total: 
-
-Hiring: ML Engineer + JavaScript developer + Python Developer
-
 # Shortcomings
 
 1. The pricing and availability of the APIs affects everything. 
 2. The software is powered by LLMs, which are inherently imperfect in their reasoning, not too differently from humans. This presents a host of problems:
-    1. O**nly one Claude/GPT instance is used: it is bound to present errors** since - even with manual trimming, there is a lot of fluff to the documents: **considerable graphical artifacts (illustrations, pictures, colours etc)** which will generate a lot of extra, inseparable data which adds load.
+    1. **Only one Claude/GPT instance is used: it is bound to present errors** since - even with manual trimming, there is a lot of fluff to the documents: **considerable graphical artifacts (illustrations, pictures, colours etc)** which will generate a lot of extra, inseparable data which adds load.
     2. Ingest cost is **per instance used.** An error checking instance will actually cost more since it’s taking the input of the original, AND the output that came with it, increasing our load. This is impractical, we’ll be paying close to 2.5x the ingest cost for one document ($5 for Claude, $12.5 for GPT-4)
         1. We have to therefore maximize the accuracy of the original and work with that. This requires manual splitting of the document and asking the LLM to update the data in iterations, which means upto a +30% cost to the estimates I stated above.
         2. ***As such: the risk of inaccuracy, while lower than it has ever been in AI development history, still exists*. The liability of that rests *solely* with the API provider.**
